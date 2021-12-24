@@ -56,6 +56,5 @@ public class Player{
         } catch (Exception e) {
             System.out.println("Error al guardar");
         }
-
     }
 }

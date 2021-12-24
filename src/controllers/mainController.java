@@ -96,6 +96,7 @@ public class mainController {
         if(option.equals(answer.getText())){
             System.out.println("eso");
         }else{
+            System.out.println("no hace");
             player.gameover();
         }
     }
