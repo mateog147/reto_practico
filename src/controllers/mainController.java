@@ -49,22 +49,22 @@ public class mainController {
 
     @FXML
     void selectA(MouseEvent event) {
-        validar(optionA.getText());
+        System.out.println("A");
     }
 
     @FXML
     void selectB(MouseEvent event) {
-        validar(optionB.getText());
+
     }
 
     @FXML
     void selectC(MouseEvent event) {
-        validar(optionC.getText());
+
     }
 
     @FXML
     void selectD(MouseEvent event) {
-        validar(optionD.getText());
+
     }
 
     @FXML
@@ -97,7 +97,6 @@ public class mainController {
             System.out.println("eso");
         }else{
             System.out.println("no hace");
-            player.gameover();
         }
     }
 }
