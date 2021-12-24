@@ -49,22 +49,22 @@ public class mainController {
 
     @FXML
     void selectA(MouseEvent event) {
-        System.out.println("A");
+        validar(optionA.getText());
     }
 
     @FXML
     void selectB(MouseEvent event) {
-
+        validar(optionB.getText());
     }
 
     @FXML
     void selectC(MouseEvent event) {
-
+        validar(optionC.getText());
     }
 
     @FXML
     void selectD(MouseEvent event) {
-
+        validar(optionD.getText());
     }
 
     @FXML
@@ -74,7 +74,6 @@ public class mainController {
 
     @FXML
     void initialize(){
-        System.out.println("inicio la cosa");
         this.level= 1;
         Round round = new Round(level);
         setScreen(round);
@@ -93,10 +92,11 @@ public class mainController {
 
     
     void validar(String option){
+        System.out.println(answer.getText());
         if(option.equals(answer.getText())){
             System.out.println("eso");
         }else{
-            System.out.println("no hace");
+            System.out.println("incorrecto");
         }
     }
 }

@@ -33,17 +33,13 @@ public class Player{
     }
     //metodos de la clase
     public void play() throws Exception{
-        System.out.println("voy a abrir");
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/mainView.fxml"));
-            System.out.println("antes del los");
             Parent root = fxmlLoader.load();
-            System.out.println("voy a mostrar");
             Scene scene =new Scene(root);
             stage.setTitle("PREGUNTAS Y RESPUESTAS");
             stage.setScene(scene);
             //mando los datos de usuario y score
-            System.out.println("lo cargue y voya a asignar un usuario");
             mainController controller = (mainController) fxmlLoader.getController();
             controller.setPlayer(this);
             stage.show();
