@@ -44,25 +44,27 @@ public class mainController {
     private Label userLabel;
     @FXML
     private Label pointLabel;
+    @FXML
+    private Label answer;
 
     @FXML
     void selectA(MouseEvent event) {
-
+        validar(optionA.getText());
     }
 
     @FXML
     void selectB(MouseEvent event) {
-
+        validar(optionB.getText());
     }
 
     @FXML
     void selectC(MouseEvent event) {
-
+        validar(optionC.getText());
     }
 
     @FXML
     void selectD(MouseEvent event) {
-
+        validar(optionD.getText());
     }
 
     @FXML
@@ -72,6 +74,7 @@ public class mainController {
 
     @FXML
     void initialize(){
+        System.out.println("inicio la cosa");
         this.level= 1;
         Round round = new Round(level);
         setScreen(round);
@@ -84,6 +87,16 @@ public class mainController {
         optionC.setText(round.getOptionC());
         optionD.setText(round.getOptionD());
         pointLabel.setText(Integer.toString(round.points));
+        answer.setText(round.getCorrect());
         errorLabel.setText("");
+    }
+
+    
+    void validar(String option){
+        if(option.equals(answer.getText())){
+            System.out.println("eso");
+        }else{
+            player.gameover();
+        }
     }
 }
