@@ -1,7 +1,8 @@
 ## Prueba para Sofka Mateo Gutiérrez
 
 Este projecto fue desarrollado como un proyecto de java para un aplicación de escritorio usando JavaFx e interfaces .fxml creadas con Scene Builder.
-
+El proyecto fue diseñado siguiendo la arquitectura Modelo Vista Controlador (MVC)
+Para la base de datos use una base de datos relacional en SQLite. 
 
 ## Librerias necesarias
 
