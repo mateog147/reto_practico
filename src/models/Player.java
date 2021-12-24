@@ -18,6 +18,11 @@ public class Player{
         this.userName = name;
         this.score = 0; 
     }
+    
+    public Player(String userName, int score) {
+        this.userName = userName;
+        this.score = score;
+    }
     //setters y getters
     public String getUserName() {
         return userName;
@@ -49,6 +54,13 @@ public class Player{
     public void gameover(){
         try {
             Conector.guardar(this.userName, this.score);
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/gameOverView.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene scene =new Scene(root);
+            stage.setTitle("GAME OVER");
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception e) {
             System.out.println("Error al guardar");
         }

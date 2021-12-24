@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import models.Player;
 import models.Round;
 
@@ -24,6 +25,14 @@ public class mainController {
     }
     @FXML
     private Button aBtn;
+    @FXML
+    private Button bBtn;
+    @FXML
+    private Button cBtn;
+    @FXML
+    private Button correctBtn;
+    @FXML
+    private Button dBtn;
     @FXML
     private Label errorLabel;
     @FXML
@@ -51,17 +60,14 @@ public class mainController {
     void selectA(MouseEvent event) {
         validar(optionA.getText());
     }
-
     @FXML
     void selectB(MouseEvent event) {
         validar(optionB.getText());
     }
-
     @FXML
     void selectC(MouseEvent event) {
         validar(optionC.getText());
     }
-
     @FXML
     void selectD(MouseEvent event) {
         validar(optionD.getText());
@@ -69,7 +75,28 @@ public class mainController {
 
     @FXML
     void quit(MouseEvent event) {
-        System.out.println("guardar y salir");
+        player.gameover();
+        Stage thisStage = (Stage) this.errorLabel.getScene().getWindow();
+        thisStage.close();
+    }
+
+    @FXML
+    void nextRound(MouseEvent event) {
+        this.level+=1;
+        if(level>=6){
+            player.gameover();
+            Stage thisStage = (Stage) this.errorLabel.getScene().getWindow();
+            thisStage.close();
+        }
+        else{
+            setScreen(new Round(this.level));
+            correctBtn.setVisible(false);
+            aBtn.setDisable(false);
+            bBtn.setDisable(false);
+            cBtn.setDisable(false);
+            dBtn.setDisable(false);
+        }
+
     }
 
     @FXML
@@ -80,6 +107,7 @@ public class mainController {
     }
 
     void setScreen(Round round){
+        
         questionTxt.setText(round.getQuestion());
         optionA.setText(round.getOptionA());
         optionB.setText(round.getOptionB());
@@ -92,11 +120,24 @@ public class mainController {
 
     
     void validar(String option){
-        System.out.println(answer.getText());
         if(option.equals(answer.getText())){
-            System.out.println("eso");
+            System.out.println("correcto");
+            player.setScore(player.getScore()+Integer.parseInt(pointLabel.getText()));
+            scoreLabel.setText(Integer.toString(this.player.getScore()));
+            correctBtn.setVisible(true);
+            if(level>=5){
+                correctBtn.setText("GANASTE! \n presiona para continuar");
+            }
+            aBtn.setDisable(true);
+            bBtn.setDisable(true);
+            cBtn.setDisable(true);
+            dBtn.setDisable(true);
         }else{
             System.out.println("incorrecto");
+            player.setScore(0);
+            player.gameover();
+            Stage thisStage = (Stage) this.errorLabel.getScene().getWindow();
+            thisStage.close();
         }
     }
 }

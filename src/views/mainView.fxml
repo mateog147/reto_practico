@@ -5,65 +5,85 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainController">
    <children>
-      <Button fx:id="aBtn" layoutX="273.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#selectA" text="A" />
-      <Button fx:id="aBtn" layoutX="559.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#selectB" text="B" />
-      <Button fx:id="aBtn" layoutX="273.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#selectC" text="C" />
-      <Button fx:id="aBtn" layoutX="558.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#selectD" text="D" />
-      <Label fx:id="userLabel" layoutX="100.0" layoutY="11.0" prefHeight="25.0" prefWidth="90.0" text="user:">
+      <Button fx:id="aBtn" layoutX="273.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#selectA" text="A">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="bBtn" layoutX="559.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#selectB" text="B">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="cBtn" layoutX="273.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#selectC" text="C">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="dBtn" layoutX="558.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#selectD" text="D">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="userLabel" layoutX="117.0" layoutY="11.0" prefHeight="25.0" prefWidth="199.0" text="user:">
+         <font>
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="475.0" layoutY="13.0" prefHeight="20.0" prefWidth="54.0" text="Puntaje:">
+      <Label layoutX="460.0" layoutY="13.0" prefHeight="21.0" prefWidth="69.0" text="Puntaje:">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="13.0" prefHeight="20.0" prefWidth="54.0" text="Usuario:">
+      <Label layoutX="26.0" layoutY="13.0" prefHeight="21.0" prefWidth="69.0" text="Usuario:">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="questionTxt" editable="false" layoutX="18.0" layoutY="94.0" prefHeight="89.0" prefWidth="564.0">
+      <TextArea fx:id="questionTxt" editable="false" layoutX="26.0" layoutY="94.0" prefHeight="89.0" prefWidth="556.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </TextArea>
       <Label fx:id="scoreLabel" layoutX="534.0" layoutY="13.0" prefHeight="20.0" prefWidth="54.0" text="500">
          <font>
-            <Font name="Arial Bold" size="16.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="optionA" editable="false" layoutX="20.0" layoutY="206.0" prefHeight="25.0" prefWidth="248.0">
+      <TextField fx:id="optionA" editable="false" layoutX="26.0" layoutY="206.0" prefHeight="33.0" prefWidth="242.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="optionC" editable="false" layoutX="20.0" layoutY="281.0" prefHeight="25.0" prefWidth="248.0">
+      <TextField fx:id="optionC" editable="false" layoutX="26.0" layoutY="281.0" prefHeight="33.0" prefWidth="242.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="optionB" editable="false" layoutX="310.0" layoutY="206.0" prefHeight="25.0" prefWidth="248.0">
+      <TextField fx:id="optionB" editable="false" layoutX="310.0" layoutY="206.0" prefHeight="33.0" prefWidth="242.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="optionD" editable="false" layoutX="310.0" layoutY="281.0" prefHeight="25.0" prefWidth="248.0">
+      <TextField fx:id="optionD" editable="false" layoutX="310.0" layoutY="281.0" prefHeight="33.0" prefWidth="242.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </TextField>
       <Button fx:id="quitBtn" layoutX="36.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#quit" style="-fx-background-color: red;" text="Abandonar partida">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <font>
+            <Font name="Gill Sans MT" size="18.0" />
+         </font>
       </Button>
       <Label fx:id="errorLabel" layoutX="286.0" layoutY="348.0" prefHeight="20.0" prefWidth="302.0" text="ERROR LABEL">
          <font>
@@ -72,17 +92,17 @@
       </Label>
       <Label fx:id="pointLabel" layoutX="302.0" layoutY="54.0" prefHeight="27.0" prefWidth="102.0" text="XXX ">
          <font>
-            <Font size="18.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
       <Label layoutX="183.0" layoutY="54.0" prefHeight="27.0" prefWidth="116.0" text="Pregunta por: ">
          <font>
-            <Font size="18.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
       <Label layoutX="343.0" layoutY="54.0" prefHeight="27.0" prefWidth="69.0" text="puntos">
          <font>
-            <Font size="18.0" />
+            <Font name="Gill Sans MT" size="18.0" />
          </font>
       </Label>
       <Label fx:id="answer" disable="true" layoutX="286.0" layoutY="369.0" prefHeight="20.0" prefWidth="302.0" visible="false">
@@ -90,5 +110,13 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button fx:id="correctBtn" alignment="CENTER" layoutX="96.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#nextRound" prefHeight="187.0" prefWidth="429.0" style="-fx-background-color: green; -fx-border-radius: 10%;" text="CORRECTO!!!              presiona para continuar" textAlignment="CENTER" visible="false" wrapText="true">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>
