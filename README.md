@@ -1,18 +1,19 @@
-## Getting Started
+## Prueba para Sofka Mateo Gutiérrez
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projecto fue desarrollado como un proyecto de java para un aplicación de escritorio usando JavaFx e interfaces .fxml creadas con Scene Builder.
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+## Librerias necesarias
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Para correr este projecto desde App.java se deben agregar a Referenced Libraries las siguientes librerias en .jar:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- sqlite-jdbc-3.7.2.jar
+- todas las relacionadas con javaFX en la version javafx-sdk-16
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Una vez tenga estas librerias asociadas al projecto modifique el archivo `vscode/launch.json` cambiando la ruta en el atributo `vmArgs`.
 
-## Dependency Management
+> Ya con todo configurado puede correr `App.java` que es el la clase con metodo main.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Gracias
+
+
