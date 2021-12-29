@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import models.Conector;
 import models.Player;
 
+//Este es el metodo controlador de la Vista de Game Over
 public class gameOverController {
 
     @FXML
@@ -39,7 +40,9 @@ public class gameOverController {
     private Label score5;
 
     @FXML
+    //Este metodo controla cuando el usuario quiere jugar nuevamente 
     void playAgain(MouseEvent event) throws Exception{
+            //Abro la interfaz para ingresar usuario
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/loginView.fxml"));
             Parent root = fxmlLoader.load();
@@ -47,15 +50,17 @@ public class gameOverController {
             stage.setTitle("PREGUNTAS Y RESPUESTAS");
             stage.setScene(scene);
             stage.show();
+            //Cierro este formulario
             Stage thisStage = (Stage) this.score1.getScene().getWindow();
             thisStage.close();
             
     }
 
     @FXML
+    //Este metodo carga en pantalla los 5 mejores resultados, usando el metodo estatico del objeto Conector
     void initialize(){
         try {
-            ArrayList<Player> top =Conector.top();
+            ArrayList<Player> top =Conector.top(); //Traemos los 5 mejores 
             if(top.get(0) != null){
                 name1Lbl.setText(top.get(0).getUserName());
                 score1.setText(Integer.toString(top.get(0).getScore()));

@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.Player;
-
+//Este es el controlador de la vista del Login
 public class loginController {
 
     @FXML
@@ -20,6 +20,7 @@ public class loginController {
     private Button playBtn;
 
     @FXML
+    //Este metodo controla la validacion de que se ingrese un nombre de usuario, desplega una nueva partida y cierra el formulario de login.
     void play(MouseEvent event) {
         String userName = nameTxt.getText();
         if(userName.isEmpty() || userName == null ){
