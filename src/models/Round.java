@@ -26,7 +26,7 @@ public class Round {
         }
 
     }
-
+    //setters y getters
     public String getQuestion() {
         return question;
     }
@@ -50,6 +50,6 @@ public class Round {
     }
 
 
-    //setters y getters
+    
     
 }

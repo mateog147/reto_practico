@@ -11,7 +11,13 @@ import java.util.ArrayList;
 public class Conector {
     static private String ruta_a = Path.of("").toAbsolutePath().toString();
     static private String RUTA = ruta_a + "/src/data/gameDb.db";
-    
+    /**
+     * Descripción: Metodo para guardar el resultado de un juego en la base de datos.
+     * @param name Nombre del usuario de la partida a guardar.
+     * @param score Puntaje de la partida a guardar.
+     * @return res retorna un 1 si guardo de manera exitosa o 0 si tiene algun problema.
+     * @throws Exception
+     */
     static Integer guardar(String name, int score) throws Exception{
         LocalDate date = LocalDate.now();
          //me conecto a la base de datos
@@ -28,6 +34,12 @@ public class Conector {
             }
         }
     }
+    /**
+     * Descripción: Metodo para traer una pregunta aleatoria de la base de datos. 
+     * @param level Nivel de la pregunta a consultar
+     * @return newQuestion retorna un objeto de la clase Question.  
+     * @throws Exception
+     */
     static Question consulta(int level) throws Exception{
         int index = (int) Math.floor(Math.random()*5 + 1);
         Class.forName("org.sqlite.JDBC");
@@ -45,6 +57,11 @@ public class Conector {
             }
         }
     }
+    /**
+     * Descripción: Metodo para traer el top 5 de jugadores ordenados por el resultado.
+     * @return players retorna un arreglo de objetos de las clase Player
+     * @throws Exception
+     */
     static public ArrayList<Player> top() throws Exception{
         ArrayList<Player> players = new ArrayList<Player>();
         int counter = 1;
